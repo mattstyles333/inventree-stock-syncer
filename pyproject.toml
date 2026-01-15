@@ -28,13 +28,6 @@ dependencies = [
     "requests>=2.28.0",
 ]
 
-[project.optional-dependencies]
-dev = [
-    "pytest>=7.0",
-    "pytest-mock>=3.10",
-    "responses>=0.23",
-]
-
 [project.entry-points."inventree_plugins"]
 MagentoStockSyncPlugin = "inventree_magento_sync.plugin:MagentoStockSyncPlugin"
 
@@ -49,5 +42,4 @@ target-version = "py39"
 [tool.ruff.lint]
 select = ["E", "F", "I", "W", "B", "C4", "UP", "SIM"]
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
+
