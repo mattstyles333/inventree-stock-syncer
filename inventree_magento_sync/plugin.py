@@ -60,25 +60,21 @@ class MagentoStockSyncPlugin(SettingsMixin, EventMixin, InvenTreePlugin):
             "name": "Magento URL",
             "description": "Base URL of your Magento 2 store (e.g., https://shop.example.com)",
             "default": "",
-            "required": True,
         },
         "MAGENTO_TOKEN": {
             "name": "Access Token",
             "description": "Magento 2 Integration access token (Bearer token)",
             "default": "",
-            "required": True,
-            "protected": True,  # Hide value in UI
+            "protected": True,
         },
         "SYNC_ENABLED": {
             "name": "Enable Sync",
             "description": "Enable automatic stock synchronization to Magento 2",
-            "validator": bool,
             "default": True,
         },
         "LOG_ONLY": {
             "name": "Log Only Mode",
             "description": "Log sync actions without actually updating Magento (for testing)",
-            "validator": bool,
             "default": False,
         },
     }
