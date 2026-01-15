@@ -40,19 +40,19 @@ class MagentoStockSyncPlugin(SettingsMixin, EventMixin, InvenTreePlugin):
     Uses the legacy single-stock API (/V1/stockItems/:sku).
     """
 
-    PLUGIN_NAME = "MagentoStockSync"
-    PLUGIN_SLUG = "magento-stock-sync"
+    PLUGIN_NAME = "inventree-magento"
+    PLUGIN_SLUG = "inventree-magento"
     PLUGIN_TITLE = "Magento 2 Stock Sync"
     PLUGIN_DESCRIPTION = "Synchronize stock quantities from InvenTree to Magento 2"
-    PLUGIN_VERSION = "0.1.0"
+    PLUGIN_VERSION = "0.2.0"
     PLUGIN_AUTHOR = "Matt Styles"
     
     # Legacy attributes for older InvenTree versions
-    NAME = "MagentoStockSync"
-    SLUG = "magento-stock-sync"
+    NAME = "inventree-magento"
+    SLUG = "inventree-magento"
     TITLE = "Magento 2 Stock Sync"
     DESCRIPTION = "Synchronize stock quantities from InvenTree to Magento 2"
-    VERSION = "0.1.0"
+    VERSION = "0.2.0"
     AUTHOR = "Matt Styles"
 
     SETTINGS = {
