@@ -44,7 +44,7 @@ class MagentoStockSyncPlugin(SettingsMixin, EventMixin, InvenTreePlugin):
     PLUGIN_SLUG = "inventree-magento"
     PLUGIN_TITLE = "Magento 2 Stock Sync"
     PLUGIN_DESCRIPTION = "Synchronize stock quantities from InvenTree to Magento 2"
-    PLUGIN_VERSION = "0.2.0"
+    PLUGIN_VERSION = "0.3.0"
     PLUGIN_AUTHOR = "Matt Styles"
     
     # Legacy attributes for older InvenTree versions
@@ -52,7 +52,7 @@ class MagentoStockSyncPlugin(SettingsMixin, EventMixin, InvenTreePlugin):
     SLUG = "inventree-magento"
     TITLE = "Magento 2 Stock Sync"
     DESCRIPTION = "Synchronize stock quantities from InvenTree to Magento 2"
-    VERSION = "0.2.0"
+    VERSION = "0.3.0"
     AUTHOR = "Matt Styles"
 
     SETTINGS = {
@@ -79,12 +79,15 @@ class MagentoStockSyncPlugin(SettingsMixin, EventMixin, InvenTreePlugin):
         },
     }
 
-    _client: MagentoClient | None = None
-    _cached_url: str = ""
-    _cached_token: str = ""
+    def __init__(self):
+        """Initialize plugin."""
+        super().__init__()
+        self._client = None
+        self._cached_url = ""
+        self._cached_token = ""
 
     @property
-    def magento(self) -> MagentoClient | None:
+    def magento(self):
         """Get or create Magento API client.
 
         Recreates client if settings have changed.
