@@ -33,13 +33,21 @@ STOCK_EVENTS = frozenset(
 )
 
 
-class MagentoStockSyncPlugin(EventMixin, SettingsMixin, InvenTreePlugin):
+class MagentoStockSyncPlugin(SettingsMixin, EventMixin, InvenTreePlugin):
     """Plugin to synchronize InvenTree stock levels with Magento 2.
 
     Listens for stock item events and updates Magento 2 when quantities change.
     Uses the legacy single-stock API (/V1/stockItems/:sku).
     """
 
+    PLUGIN_NAME = "MagentoStockSync"
+    PLUGIN_SLUG = "magento-stock-sync"
+    PLUGIN_TITLE = "Magento 2 Stock Sync"
+    PLUGIN_DESCRIPTION = "Synchronize stock quantities from InvenTree to Magento 2"
+    PLUGIN_VERSION = "0.1.0"
+    PLUGIN_AUTHOR = "Matt Styles"
+    
+    # Legacy attributes for older InvenTree versions
     NAME = "MagentoStockSync"
     SLUG = "magento-stock-sync"
     TITLE = "Magento 2 Stock Sync"
